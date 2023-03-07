@@ -1,6 +1,7 @@
 import styled from "styled-components/native";
 
 export const Container = styled.View`
+    @import url('https://fonts.googleapis.com/css2?family=Inter:wght@100&display=swap');
     position: absolute;
     left: 24px;
     top: 398px;
@@ -12,9 +13,10 @@ export const Container = styled.View`
     align-items: center;
     justify-content: space-between;
     border-radius: 5px;
+    font-family: 'Inter';
 `;
 
-export const Titulo = styled.Text`
+export const Title = styled.Text`
     color: white;
     font-size: 32px;
 `
@@ -26,15 +28,12 @@ export const Logo = styled.Image`
     top: 149px;
 `
 
-export const Simbolo = styled.Image`
-    width: 24px;
-    height: 24px;
-`
-export const Digitar = styled.TextInput`
-    width: 308px;
+export const Type = styled.TextInput`
+    width: 275px;
     height: 38px;
     background-color: white;
     border-radius: 5px;
+    font-size: 15px;
 `
 export const TypeBars = styled.View`
     height: 100px;
@@ -56,7 +55,7 @@ export const ForgotPassword = styled.Text`
     color: #58625E;
 `
 
-export const Botao = styled.TouchableOpacity`
+export const EnterButton = styled.TouchableOpacity`
     background-color: white;
     width: 200px;
     height: 50px;
@@ -66,7 +65,7 @@ export const Botao = styled.TouchableOpacity`
     border-radius: 5px;
 `
 
-export const BotaoLogin = styled.TouchableOpacity`
+export const LoginButton = styled.TouchableOpacity`
     background-color: white;
     border-radius: 50%;
     height: 50px;
@@ -83,7 +82,7 @@ export const Nav = styled.View`
     bottom: 20px;
 `
 
-export const ImagemSocial = styled.Image`
+export const SocialImage = styled.Image`
     width: 40px;
     height: 40px;
 `
@@ -93,4 +92,24 @@ export const BackArrow = styled.Image`
     height: 34px;
     left: 8px;
     top: 39px;
+`
+
+export const InputBar = styled.View`
+    width: 308px;
+    height: 38px;
+    background-color: white;
+    border-radius: 5px;
+    flex-direction: row;
+    align-items: center;
+    justify-content: space-between;
+`
+
+export const InputBarImage = styled.Image`
+    width: 24px;
+    height: 24px;
+`
+
+export const ButtonText = styled.Text`
+    font-size: 24px;
+    color: #58625E;
 `
