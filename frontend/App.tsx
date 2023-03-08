@@ -1,9 +1,9 @@
-import TelaLogin from "./pages/TelaLogin";
+import LoginScreen from "./pages/LoginScreen";
 
 export default function App() {
   return (
     <>
-      <TelaLogin />
+      <LoginScreen></LoginScreen>
     </>
   );
 }

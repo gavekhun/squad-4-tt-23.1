@@ -1,7 +1,7 @@
 import { View } from "react-native";
 import { BackArrow, ButtonText, Container, EnterButton, ForgotPassword,InputBar, InputBarImage, LoginButton, Logo, Nav, SocialImage, Title, Type, TypeBars } from "./style";
 
-export default function TelaLogin() {
+export default function LoginScreen() {
     return (
         <>
         <View>
