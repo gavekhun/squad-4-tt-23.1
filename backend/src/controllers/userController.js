@@ -22,8 +22,15 @@ const show = async(req, res) => {
 
 const create = async(req, res) => {
  try {
-    const user = await User.create(req.body);
-    return res.status(201).json({message:"User created", User: user});
+    const newUser = {   
+      name: req.body.name,
+      phoneNumber: req.body.phoneNumber,
+      email: req.body.email,
+      cpf: req.body.cpf,
+      address:req.body.address,
+    };
+    const user = await User.create(newUser);
+    return res.status(201).json({message:"User created", user});
   } catch(err){
     return res.status(500).json({error:err})
   }
@@ -32,8 +39,13 @@ const create = async(req, res) => {
 const update = async(req, res) => {
   const {id} = req.params;
   try {
-    const user = await User.update({where: {id: id}});
-    return res.status(200).json({user});
+    const [updated] = await User.update(req.body, {where: {id: id}});
+    if (updated){
+      const user = await User.findByPk(id); 
+      return res.status(200).send(user);
+    }
+    throw new Error();
+    
   }catch(err){
     return res.status(500).json({err});
   }
