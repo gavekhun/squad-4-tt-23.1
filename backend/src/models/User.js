@@ -3,13 +3,6 @@ const sequelize = require('../config/sequelize');
 
 
 const User = sequelize.define('User', {
-  iDUser: {
-    type: DataTypes.INTEGER,
-    primaryKey: true,
-    autoIncrement: true,
-    allowNull: false
-
-  },
   name: {
     type: DataTypes.STRING,
     allowNull: false,
@@ -33,7 +26,7 @@ const User = sequelize.define('User', {
   
   
   address: {
-    type: DataTypes.ARRAY(DataTypes.ABSTRACT),
+    type: DataTypes.TEXT,
     allowNull: false
   },
 });
