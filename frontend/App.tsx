@@ -1,9 +1,9 @@
-import NewPasswordScreen from "./pages/NewPasswordScreen";
-import RecoverPasswordScreen from "./pages/RecoverPasswordScreen";
-import VerifyCodeScreen from "./pages/VerifyCodeScreen";
+import LoginScreen from "./pages/LoginScreen";
 
 export default function App() {
   return (
-    <NewPasswordScreen></NewPasswordScreen>
+    <>
+      <LoginScreen></LoginScreen>
+    </>
   );
 }
