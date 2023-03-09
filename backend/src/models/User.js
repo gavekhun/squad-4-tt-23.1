@@ -3,6 +3,10 @@ const sequelize = require('../config/sequelize');
 
 
 const User = sequelize.define('User', {
+  moderator:{
+    type: DataTypes.BOOLEAN,
+    allowNull: false
+  },
   name: {
     type: DataTypes.STRING,
     allowNull: false,
@@ -23,8 +27,7 @@ const User = sequelize.define('User', {
   
   // salt:{},
   // hash:{},
-  
-  
+    
   address: {
     type: DataTypes.TEXT,
     allowNull: false
@@ -34,6 +37,11 @@ const User = sequelize.define('User', {
 User.associate = function (models) {
   User.hasMany(models.Cart);
   User.hasMany(models.Assessement);
+  User.belongsToMany(models.Products, {
+    through: 'Favorites', 
+    as: 'favoring',
+    // foreignKey: 'productid'
+  });
 };
 
 

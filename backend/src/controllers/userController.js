@@ -22,7 +22,8 @@ const show = async(req, res) => {
 
 const create = async(req, res) => {
  try {
-    const newUser = {   
+    const newUser = {
+      moderator: req.body.moderator,   
       name: req.body.name,
       phoneNumber: req.body.phoneNumber,
       email: req.body.email,
