@@ -1,11 +1,7 @@
-import CartScreen from "./pages/CartScreen";
-import FavoritesScreen from "./pages/FavoritesScreen";
-import LoginScreen from "./pages/LoginScreen";
+import ProductScreen from "./pages/ProductScreen";
 
 export default function App() {
   return (
-    <>
-      <CartScreen></CartScreen>
-    </>
+    <ProductScreen></ProductScreen>
   );
 }
