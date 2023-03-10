@@ -1,50 +1,58 @@
-const DataTypes = require('sequelize');
-const sequelize = require('../config/sequelize');
+const DataTypes = require("sequelize");
+const sequelize = require("../config/sequelize");
 
-
-const Products = sequelize.define('Products', {
-  
+const Products = sequelize.define("Products", {
   // name: {
   //   type: DataTypes.STRING,
   //   allowNull: false
   // },
   author: {
     type: DataTypes.STRING,
-    allowNull: false
+    allowNull: false,
   },
   title: {
     type: DataTypes.STRING,
-    allowNull: false
+    allowNull: false,
   },
   publishers: {
     type: DataTypes.STRING,
-    allowNull: false
+    allowNull: false,
   },
   genre: {
     type: DataTypes.STRING,
-    allowNull: false
+    allowNull: false,
   },
   synopsis: {
     type: DataTypes.TEXT,
-    allowNull: false
+    allowNull: false,
   },
   publicationYear: {
     type: DataTypes.DATE,
-    allowNull: false
+    allowNull: false,
   },
-  price:{
+  price: {
     type: DataTypes.DOUBLE,
-    allowNull: false
+    allowNull: false,
   },
-  image:{
-  type: DataTypes.BLOB,
-  allowNull: false
-}
+  image: {
+    type: DataTypes.BLOB,
+    allowNull: false,
+  },
 });
 
-Products.associate = function(models){
-  // Products.belongsToMany(models.User, {through: models.Favorites});
-  Products.belongsToMany(models.Cart, {through: models.CartProducts});
+// Associations
+Products.associate = function (models) {
+  Products.belongsToMany(models.User, {
+    through: "Favorites",
+    as: "favorited",
+    foreignKey: "productuserid",
+  });
+
+  Products.belongsToMany(models.Cart, {
+    through: "CartProducts",
+    as: "Cartin",
+    foreignKey: "productcartid",
+  });
 };
 
 module.exports = Products;

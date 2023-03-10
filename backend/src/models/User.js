@@ -1,11 +1,9 @@
-const DataTypes = require('sequelize');
-const sequelize = require('../config/sequelize');
+const DataTypes = require("sequelize");
+const sequelize = require("../config/sequelize");
 
-
-const User = sequelize.define('User', {
-  moderator:{
+const User = sequelize.define("User", {
+  moderator: {
     type: DataTypes.BOOLEAN,
-    allowNull: false
   },
   name: {
     type: DataTypes.STRING,
@@ -13,36 +11,44 @@ const User = sequelize.define('User', {
   },
   phoneNumber: {
     type: DataTypes.STRING,
-    allowNull: false
+    allowNull: false,
   },
   email: {
     type: DataTypes.STRING,
-    allowNull: false
+    allowNull: false,
   },
   cpf: {
     type: DataTypes.STRING,
-    allowNull: false  
+    allowNull: false,
+  },
+  image: {
+    type: DataTypes.STRING,
+    allowNull: true,
+  },
+  point:{
+    type: DataTypes.INTEGER,
   },
   //TODO(Marco): Estudar sobre como declarar o 'salt e hash' no model Usuario
-  
+
   // salt:{},
   // hash:{},
-    
+
   address: {
     type: DataTypes.TEXT,
-    allowNull: false
+    allowNull: false,
   },
 });
 
+// Associations
 User.associate = function (models) {
   User.hasMany(models.Cart);
-  User.hasMany(models.Assessement);
+  User.hasMany(models.Evaluate);
+
   User.belongsToMany(models.Products, {
-    through: 'Favorites', 
-    as: 'favoring',
-    // foreignKey: 'productid'
+    through: "Favorites",
+    as: "favoring",
+    foreignKey: "userproductid",
   });
 };
-
 
 module.exports = User;
