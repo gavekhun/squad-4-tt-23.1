@@ -35,36 +35,3 @@ export const CardsContainer = styled.View`
     width: 80vw;
     align-items: center;
 `
-
-export const PriceBar = styled.View`
-    width: 330px;
-    height: 45px;
-    background-color: rgba(142, 195, 176, 0.6);
-    border-radius: 8px;
-    align-items:center;
-    margin-top: 50px;
-    flex-direction: row;
-`
-
-export const PriceText = styled.Text`
-    font-size: 16px;
-    line-height: 19px;
-    margin-left: 10px;
-`
-
-export const BuyButtonView = styled.View`
-    width: 271px;
-    height: 52px;
-    border-radius: 15px;
-    background: #8EC3B0;
-    align-items: center;
-    justify-content: center;
-    margin-top: 50px;
-`
-
-export const BuyButtonText = styled.Text`
-    font-weight: 500;
-    font-size: 16px;
-    line-height: 19px;
-    color: white;
-`
