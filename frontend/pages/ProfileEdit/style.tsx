@@ -1,0 +1,44 @@
+import styled from "styled-components/native";
+import { Container } from "../LoginScreen/style";
+
+export const Screen = styled.View`
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@800&display=swap');
+display: flex;
+flex:1;
+align-items: center;
+font-family:sans-serif;
+`
+
+export const ContainerForm = styled.View`
+width:87.6%;
+display: flex;
+align-items: center;
+background-color: #8EC3B0;
+border-radius: 5;
+margin-top: 16px;
+`
+export const ConfirmBtn = styled.TouchableOpacity`
+background-color: #8EC3B0;
+border-radius: 10;
+font-size: 20;
+font-weight: 600;
+color: white;
+width: 200px;
+height:50px;
+display: flex;
+align-items: center;
+justify-content: center;
+margin-top: 16px;
+`
+
+export const EditPasswordTxt = styled.Text`
+font-size: 16;
+font-weight: 600;
+color: white;
+align-self:flex-end;
+margin-bottom: 10px;
+`
+
+export const Teste = styled.View`
+width: 90%;
+`
