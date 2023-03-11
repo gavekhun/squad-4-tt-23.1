@@ -20,7 +20,7 @@ position: absolute;
 `
 
 export const HeaderTitle = styled.Text`
-font-size: 16;
+font-size: 18;
 font-weight: 500;
 color: white;
 margin: auto;
