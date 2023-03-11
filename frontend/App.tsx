@@ -1,9 +1,9 @@
 import ProductScreen from "./pages/ProductScreen";
 import AddProduct from './pages/AddProduct/AddProduct';
-import Profile from "./pages/Profile";
+import ProfileEdit from "./pages/ProfileEdit";
 
 export default function App() {
   return (
-    <Profile/>
+    <ProfileEdit/>
   );
 }
