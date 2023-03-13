@@ -4,6 +4,8 @@ const sequelize = require("../config/sequelize");
 const User = sequelize.define("User", {
   moderator: {
     type: DataTypes.BOOLEAN,
+    allowNull: false,
+    defaultValue: false,
   },
   name: {
     type: DataTypes.STRING,
@@ -25,8 +27,10 @@ const User = sequelize.define("User", {
     type: DataTypes.STRING,
     allowNull: true,
   },
-  point:{
+  point: {
     type: DataTypes.INTEGER,
+    defaultValue: 0,
+    allowNull: false
   },
   //TODO(Marco): Estudar sobre como declarar o 'salt e hash' no model Usuario
 
@@ -41,7 +45,8 @@ const User = sequelize.define("User", {
 
 // Associations
 User.associate = function (models) {
-  User.hasMany(models.Cart);
+  User.hasOne(models.Cart, { foreignKey: "userId" });
+  
   User.hasMany(models.Evaluate);
 
   User.belongsToMany(models.Products, {

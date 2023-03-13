@@ -1,4 +1,5 @@
 const Cart = require('../models/Cart');
+const Evaluate = require('../models/Evaluate');
 const Products = require('../models/Products');
 const User = require('../models/User');
 
@@ -15,7 +16,13 @@ const index = async(req, res) =>{
 const show = async(req, res) => {
   const {id} = req.params;
   try {
-    const user = await User.findByPk(id, {include:{model: Cart}});
+    const user = await User.findByPk(id, {include: [{
+      model: Cart,
+        attributes:['amount','point', 'price', 'payment'],
+      
+    }, {model: Evaluate,}
+  ]
+  });
     return res.status(200).json({user});
   }catch(err){
     return res.status(500).json({err});
@@ -118,5 +125,6 @@ module.exports = {
   favorites,
   unfavorites,
   list,
+  
   
 };

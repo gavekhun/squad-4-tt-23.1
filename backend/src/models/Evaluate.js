@@ -8,5 +8,9 @@ const Evaluate = sequelize.define('Evaluate', {
     }
 });
 
+Evaluate.associate = function (models) {
+    Evaluate.belongsTo(models.User);
+};
+
 
 module.exports = Evaluate;
