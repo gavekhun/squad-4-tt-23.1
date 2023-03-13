@@ -69,3 +69,22 @@ margin-left: 14px;
 align-self: flex-start;
 `
 
+
+
+export const ChangePasswordBox = styled.View`
+height: 150px;
+width:87.6%;
+margin: auto;
+background-color:#4BC8B1;
+border-radius: 5;
+border: 2px;
+`
+
+export const EditPasswordTxt = styled.Text`
+font-size: 16;
+font-weight: 600;
+color: white;
+align-self:flex-end;
+margin-bottom: 10px;
+`
+

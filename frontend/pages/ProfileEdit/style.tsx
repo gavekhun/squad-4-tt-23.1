@@ -31,14 +31,6 @@ justify-content: center;
 margin-top: 16px;
 `
 
-export const EditPasswordTxt = styled.Text`
-font-size: 16;
-font-weight: 600;
-color: white;
-align-self:flex-end;
-margin-bottom: 10px;
-`
-
 export const Teste = styled.View`
 width: 90%;
 `
