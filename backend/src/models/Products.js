@@ -2,10 +2,7 @@ const DataTypes = require("sequelize");
 const sequelize = require("../config/sequelize");
 
 const Products = sequelize.define("Products", {
-  // name: {
-  //   type: DataTypes.STRING,
-  //   allowNull: false
-  // },
+  
   author: {
     type: DataTypes.STRING,
     allowNull: false,
@@ -35,7 +32,7 @@ const Products = sequelize.define("Products", {
     allowNull: false,
   },
   image: {
-    type: DataTypes.BLOB,
+    type: DataTypes.STRING,
     allowNull: false,
   },
 });

@@ -1,4 +1,5 @@
 const Evaluate = require("../models/Evaluate");
+const User = require("../models/User");
 
 const index = async (req, res) => {
   try {
@@ -31,18 +32,6 @@ const create = async (req, res) => {
   }
 };
 
-// O Usuário não vai poder atualizar o comentário
-
-// const update = async (req, res) => {
-//     const {id} = req.params;
-//     try {
-        
-//     } catch (err) {
-        
-//     }
-// };
-
-
 const destroy = async (req, res) => {
     const {id} =req.params;
     try {
@@ -54,10 +43,32 @@ const destroy = async (req, res) => {
     }
 };
 
+// Relações
+
+// Adicionar Comentário ao Usuário
+const addEvaluate = async(req, res) => {
+  const { userId, evaluateId} = req.params;
+  try {
+    const user = await User.findByPk(userId);
+    const evaluate = await Evaluate.findByPk(evaluateId);
+    await evaluate.setUser(user);
+    return res
+      .status(200)
+      .json({message: "Evaluate add User", evaluate: evaluate});  
+  } catch (err) {
+    return res,status(500).json({message: "Error", Error: err});
+  }
+};
+
+
+
+
+
 module.exports = {
     index,
     show,
     create,
     destroy,
-    //update
+    addEvaluate,
+    
 };

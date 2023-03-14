@@ -11,19 +11,19 @@ const Cart = sequelize.define("Cart", {
   price: {
     type: DataTypes.DOUBLE,
   },
-  // Nessa situação de pagamento 'fake' melhor que pensei foi o boolean (pagou ou não pagou)
   payment: {
     type: DataTypes.BOOLEAN,
-    // allowNull: false
+    allowNull: false,
+    defaultValue: false,
   },
 });
 
-Cart.associate = function(models){
-  Cart.belongsTo(models.User);
+Cart.associate = function (models) {
+  Cart.belongsTo(models.User, { foreignKey: "userId" });
   Cart.belongsToMany(models.Products, {
-    through: "CartProducts", 
+    through: "CartProducts",
     as: "Cartin",
-    foreignKey: "cartproductid"
+    foreignKey: "cartproductid",
   });
 };
 

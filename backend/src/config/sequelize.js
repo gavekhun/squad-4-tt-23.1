@@ -23,7 +23,11 @@ const sequelize = (process.env.DB_CONNECTION === 'sqlite')
 module.exports = sequelize;
 
 // require das models
-
+require('../models/User');
+require('../models/Evaluate');
+require('../models/Cart');
+require('../models/Products');    
+require('../models/CartProducts');
 
 // Associação das models
 for (mod in sequelize.models) {
