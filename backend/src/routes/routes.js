@@ -6,6 +6,23 @@ const cartController = require("../controllers/cartController");
 const productController = require("../controllers/productController");
 const evaluateController = require("../controllers/evaluateController");
 
+// autenticação
+const authController = require('../controllers/authController');
+const passport = require('passport');
+require('../config/passport')(passport);
+
+router.use("/Private", passport.authenticate('jwt', {session: false}));
+
+
+
+const moderatorMiddleware = require('../middlewares/moderatorMiddleware');
+
+
+// Rotas de autenticação do login:
+router.post("/Login", authController.login);
+router.get("/Private/getDetails", authController.getDetails);
+
+
 // Rotas da Controller User
 router.post("/User", userController.create);
 router.get("/User/:id", userController.show);
