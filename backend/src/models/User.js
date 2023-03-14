@@ -32,11 +32,14 @@ const User = sequelize.define("User", {
     defaultValue: 0,
     allowNull: false
   },
-  //TODO(Marco): Estudar sobre como declarar o 'salt e hash' no model Usuario
-
-  // salt:{},
-  // hash:{},
-
+  salt:{
+    type: DataTypes.STRING,
+  
+  },
+  hash:{
+    type: DataTypes.STRING,
+  
+  },
   address: {
     type: DataTypes.TEXT,
     allowNull: false,
