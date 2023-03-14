@@ -1,10 +1,10 @@
 import ProductScreen from "./pages/ProductScreen";
 import AddProduct from './pages/AddProduct/AddProduct';
 import ProfileEdit from "./pages/ProfileEdit";
-import AdminDashboardScreen from "./pages/AdminDashboardScreen";
+import DataScreen from "./pages/DataScreen";
 
 export default function App() {
   return (
-    <AdminDashboardScreen/>
+    <DataScreen/>
   );
 }
