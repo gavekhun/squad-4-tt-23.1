@@ -3,6 +3,8 @@ const Evaluate = require('../models/Evaluate');
 const Products = require('../models/Products');
 const User = require('../models/User');
 
+const Auth = require('../config/auth');
+
 
 const index = async(req, res) =>{
     try {
@@ -31,6 +33,10 @@ const show = async(req, res) => {
 
 const create = async(req, res) => {
  try {
+    const {password} = req.body;
+    const hashSalt = Auth.generatePassword(password);
+    const hash = hashSalt.hash;
+    const salt = hashSalt.salt;
     const newUser = {
       moderator: req.body.moderator,   
       name: req.body.name,
@@ -38,6 +44,8 @@ const create = async(req, res) => {
       email: req.body.email,
       cpf: req.body.cpf,
       address:req.body.address,
+      salt: salt,
+      hash: hash,
     };
     const user = await User.create(newUser);
     return res.status(201).json({message:"User created", user});
