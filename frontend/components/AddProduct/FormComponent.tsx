@@ -37,10 +37,14 @@ export default function FormComponent() {
                     control={control}
                     render={({ field: { onChange, value } }) => (
                         <TextInputMask
-                            type={'custom'}
+                            type={'money'}
                             options={{
-                                mask: 'R$ 99,99'
-                            }}
+                                precision: 2,
+                                separator: ',',
+                                delimiter: '.',
+                                unit: 'R$',
+                                suffixUnit: ''
+                              }}
                             onChangeText={onChange}
                             value={value}
                             placeholder="R$ 00,00"

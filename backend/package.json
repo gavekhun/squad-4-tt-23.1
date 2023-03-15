@@ -15,7 +15,11 @@
   "keywords": [],
   "description": "",
   "dependencies": {
+<<<<<<< HEAD
     "crypto": "^1.0.1",
+=======
+    "cors": "^2.8.5",
+>>>>>>> fbdc26a (feature: Demorou mas saiu. Não usei validate nem nada do gênero nos formulários, mas acho que vamos ter que voltar neles de qualquer jeito, principalmente pelas senhas)
     "dotenv": "^16.0.3",
     "express": "^4.18.2",
     "express-validator": "^6.15.0",

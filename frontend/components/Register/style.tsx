@@ -16,13 +16,19 @@ font-weight: 500;
 
 export const Form = styled.View`
 display: flex;
-justify-content: center;
 width: 100%;
+margin: 11px 0 10px 0;
+align-items:center;
 `
 
 export const Icon = styled.Image`
 width: 24px;
 height: 24px;
 position: absolute;
-margin-left: 28px;
+top:0;
+bottom:0;
+left:0;
+right:0;
+margin-left:28px;
+margin-top: 8px;
 `
